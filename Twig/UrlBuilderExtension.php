@@ -69,7 +69,6 @@ class UrlBuilderExtension extends \Twig_Extension
      */
     public function getImgixUrl($path, $source = null, $width = null, $height = null, $fit = null)
     {
-        dump($this->enabled);
         if (!$this->enabled) {
             return $path;
         }
