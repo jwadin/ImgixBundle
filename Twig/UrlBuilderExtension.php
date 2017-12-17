@@ -90,16 +90,6 @@ class UrlBuilderExtension extends \Twig_Extension
     }
 
     /**
-     * Returns the name of the extension.
-     *
-     * @return string The extension name
-     */
-    public function getName()
-    {
-        return 'goldenline_imgix_url_builder_extension';
-    }
-
-    /**
      * Retruns an URL builder by source
      *
      * @param null|string $source
