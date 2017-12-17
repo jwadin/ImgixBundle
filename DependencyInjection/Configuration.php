@@ -17,9 +17,12 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->scalarNode('default_source')
-                ->defaultValue('default')
-            ->end()
+                ->scalarNode('default_source')
+                    ->defaultValue('default')
+                    ->end()
+                ->booleanNode('enabled')
+                    ->defaultFalse()
+                    ->end()
                 ->append($this->getSourcesNode())
             ->end()
         ;

@@ -13,6 +13,7 @@
         <service id="tacticmedia_imgix.twig.url_builder_extension" class="%tacticmedia_imgix.twig.url_builder_extension.class%" public="false">
             <argument type="service" id="router.request_context" />
             <argument type="string">%tacticmedia_imgix.default_source%</argument>
+            <argument>%tacticmedia_imgix.enabled%</argument>
             <tag name="twig.extension" />
         </service>
     </services>

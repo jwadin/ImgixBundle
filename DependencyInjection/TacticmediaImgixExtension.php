@@ -20,8 +20,14 @@ class TacticmediaImgixExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        if (false === array_key_exists($config['default_source'], $config['sources'])) {
-            throw new \InvalidArgumentException('Default source should be one of: ' . implode(', ', array_keys($config['sources'])));
+        $container->setParameter('tacticmedia_imgix.enabled', $config['enabled']);
+
+        if (false === array_key_exists($config['default_source'], $config['sources']) && $config['enabled']) {
+            if (empty($config['sources'])) {
+                throw new \InvalidArgumentException('No imgix sources were configured');
+            } else {
+                throw new \InvalidArgumentException('Default source should be one of: ' . implode(', ', array_keys($config['sources'])));
+            }
         }
 
         $container->setParameter('tacticmedia_imgix.default_source', $config['default_source']);

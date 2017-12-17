@@ -21,15 +21,19 @@ class UrlBuilderExtension extends \Twig_Extension
      */
     private $defaultSource;
 
+    /** @var boolean */
+    private $enabled;
+
     /**
      * @param RequestContext $requestContext
      * @param string $defaultSource
      */
-    public function __construct(RequestContext $requestContext, $defaultSource)
+    public function __construct(RequestContext $requestContext, $defaultSource, $enabled)
     {
         $this->context = $requestContext;
         $this->urlBuilders = [];
         $this->defaultSource = $defaultSource;
+        $this->enabled = $enabled;
     }
 
     /**
@@ -65,6 +69,11 @@ class UrlBuilderExtension extends \Twig_Extension
      */
     public function getImgixUrl($path, $source = null, $width = null, $height = null, $fit = null)
     {
+        dump($this->enabled);
+        if (!$this->enabled) {
+            return $path;
+        }
+
         $builder = $this->getUrlBuilder($source);
 
         // HTTP/HTTPS

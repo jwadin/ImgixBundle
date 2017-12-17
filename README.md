@@ -38,6 +38,7 @@ public function registerBundles()
 Finally add your sources:
 ```yml
 tacticmedia_imgix:
+    enabled: true
     default_source: folder
     sources:
         folder:
@@ -59,6 +60,8 @@ In your Twig template just do:
 <!-- Absolute path with a web folder source -->
 <img src="{{ imgix('images/modules/logos_page/Octocat.png', width=200, height=166) }}" width="200" height="166"/>
 ```
+
+You should put the `enabled` and `domains[]` setting in your parameters to be able to enable imgix for different environments.
 
 License
 -------
