@@ -6,10 +6,18 @@ Integration of the imgix library into Symfony.
 Installation
 -------------
 
-The best way to install this bundle is by using [Composer](http://getcomposer.org). Simply run:
+The best way to install this bundle is by using [Composer](http://getcomposer.org).
+
+For Symfony 2.x run:
 
 ``` bash
-$ php composer.phar require tacticmedia/imgix-bundle dev-master
+$ php composer.phar require tacticmedia/imgix-bundle ~1.0
+```
+
+For Symfony 3.x run:
+
+``` bash
+$ php composer.phar require tacticmedia/imgix-bundle ~2.0
 ```
 
 Then, enable the bundle:
