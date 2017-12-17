@@ -1,21 +1,25 @@
 {
-    "name": "goldenline/imgix-bundle",
-    "description": "Integration of the imgix library into Symfony",
+    "name": "tacticmedia/imgix-bundle",
+    "description": "Integration of the imgix library into Symfony 3",
     "keywords": ["imgix"],
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Jan Klan",
+            "email": "jan@klan.com.au"
+        },
         {
             "name": "Sebastian Grodzicki",
             "email": "sebastian@grodzicki.pl"
         }
     ],
     "require": {
-        "symfony/framework-bundle": "~2.3",
-        "imgix/imgix-php": "~1.0"
+        "symfony/framework-bundle": "~2.3 | 3.0",
+        "imgix/imgix-php": "~1.1"
     },
     "autoload": {
-        "psr-0": {"GoldenLine\\ImgixBundle": ""}
+        "psr-0": {"Tacticmedia\\ImgixBundle": ""}
     },
-    "target-dir": "GoldenLine/ImgixBundle"
+    "target-dir": "Tacticmedia/ImgixBundle"
 }

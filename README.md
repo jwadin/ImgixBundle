@@ -1,4 +1,4 @@
-GoldenlineImgixBundle
+TacticmediaImgixBundle
 =====================
 
 [![Dependency Status](https://www.versioneye.com/user/projects/55278ab52ced4ffffe00061b/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55278ab52ced4ffffe00061b)
@@ -11,7 +11,7 @@ Installation
 The best way to install this bundle is by using [Composer](http://getcomposer.org). Simply run:
 
 ``` bash
-$ php composer.phar require goldenline/imgix-bundle dev-master
+$ php composer.phar require tacticmedia/imgix-bundle dev-master
 ```
 
 Then, enable the bundle:
@@ -24,14 +24,14 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new GoldenLine\ImgixBundle\GoldenlineImgixBundle(),
+        new Tacticmedia\ImgixBundle\TacticmediaImgixBundle(),
     );
 }
 ```
 
 Finally add your sources:
 ```yml
-goldenline_imgix:
+tacticmedia_imgix:
     default_source: folder
     sources:
         folder:

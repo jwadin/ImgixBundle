@@ -1,6 +1,6 @@
 <?php
 
-namespace GoldenLine\ImgixBundle\Twig;
+namespace Tacticmedia\ImgixBundle\Twig;
 
 use Imgix\UrlBuilder;
 use Symfony\Component\Routing\RequestContext;

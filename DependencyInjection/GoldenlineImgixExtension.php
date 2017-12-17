@@ -1,6 +1,6 @@
 <?php
 
-namespace GoldenLine\ImgixBundle\DependencyInjection;
+namespace Tacticmedia\ImgixBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -10,7 +10,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 use Imgix\ShardStrategy;
 
-class GoldenlineImgixExtension extends Extension
+class TacticmediaImgixExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -24,13 +24,13 @@ class GoldenlineImgixExtension extends Extension
             throw new \InvalidArgumentException('Default source should be one of: ' . implode(', ', array_keys($config['sources'])));
         }
 
-        $container->setParameter('goldenline_imgix.default_source', $config['default_source']);
+        $container->setParameter('tacticmedia_imgix.default_source', $config['default_source']);
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
 
-        $extension = $container->getDefinition('goldenline_imgix.twig.url_builder_extension');
-        $class = $container->getParameter('goldenline_imgix.url_builder.class');
+        $extension = $container->getDefinition('tacticmedia_imgix.twig.url_builder_extension');
+        $class = $container->getParameter('tacticmedia_imgix.url_builder.class');
 
         foreach ($config['sources'] as $name => $source) {
             $domains = $source['domains'];
@@ -42,7 +42,7 @@ class GoldenlineImgixExtension extends Extension
 
             $definition = new Definition($class, [$domains, $tls, $key, $strategy]);
 
-            $id = sprintf('goldenline_imgix.url_builder_%s', $name);
+            $id = sprintf('tacticmedia_imgix.url_builder_%s', $name);
 
             $container->setDefinition($id, $definition);
 
