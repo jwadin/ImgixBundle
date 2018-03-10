@@ -14,10 +14,16 @@ For Symfony 2.x run:
 $ php composer.phar require tacticmedia/imgix-bundle ~1.0
 ```
 
-For Symfony 3.x run:
+For Symfony 3.4+ run:
 
 ``` bash
 $ php composer.phar require tacticmedia/imgix-bundle ~2.0
+```
+
+For Symfony 4+ run:
+
+``` bash
+$ php composer.phar require tacticmedia/imgix-bundle ~3.0
 ```
 
 Then, enable the bundle:
