@@ -1,6 +1,7 @@
 {
     "name": "tacticmedia/imgix-bundle",
-    "description": "Integration of the imgix library into Symfony 2/3/4",
+    "version": "3.1",
+    "description": "Integration of the imgix library into Symfony 4.1 & PHP 7.1",
     "keywords": ["imgix"],
     "type": "symfony-bundle",
     "license": "MIT",
@@ -15,7 +16,8 @@
         }
     ],
     "require": {
-        "symfony/framework-bundle": "~3.4|~4.0",
+        "php": "~7.1",
+        "symfony/framework-bundle": "~4.0|~4.1",
         "imgix/imgix-php": "~2.0"
     },
     "autoload": {

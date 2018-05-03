@@ -62,14 +62,18 @@ class UrlBuilderExtension extends \Twig_Extension
      *
      * @param string $path
      * @param null|string $source
-     * @param null|int $width
-     * @param null|int $height
+     * @param int|null $w
+     * @param int|null $h
      * @param null|string $fit
+     * @param int|null $q
+     * @param int|null $dpr
+     * @param null|string $auto
      * @return string
      */
-    public function getImgixUrl($path, $source = null, $width = null, $height = null, $fit = null)
+    public function getImgixUrl(string $path, ?string $source = null, ?int $w = 2048, ?int $h = 2048, ?string $fit = 'max', ?int $q = null, ?int $dpr = 1, ?string $auto = 'compress,format')
     {
-        if (!$this->enabled) {
+        // If imgix is disabled or we already provided an absolute URI
+        if (!$this->enabled || preg_match('/^https?:\/\//', $path)) {
             return $path;
         }
 
@@ -82,16 +86,10 @@ class UrlBuilderExtension extends \Twig_Extension
         // Size (optional)
         $params = [];
 
-        if ($width > 0) {
-            $params['w'] = (int) $width;
-        }
-
-        if ($height > 0) {
-            $params['h'] = (int) $height;
-        }
-
-        if ($fit !== null) {
-            $params['fit'] = $fit;
+        foreach (['w', 'h', 'fit', 'q', 'dpr', 'auto'] as $key) {
+            if (null !== $$key) {
+                $params[$key] = $$key;
+            }
         }
 
         return $builder->createURL($path, $params);

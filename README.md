@@ -26,6 +26,12 @@ For Symfony 4+ run:
 $ php composer.phar require tacticmedia/imgix-bundle ~3.0
 ```
 
+For Symfony 4+ with PHP 7.1 run:
+
+``` bash
+$ php composer.phar require tacticmedia/imgix-bundle ~3.1
+```
+
 Then, enable the bundle:
 
 ``` php
@@ -64,7 +70,7 @@ In your Twig template just do:
 <img src="{{ imgix('https://assets-cdn.github.com/images/modules/logos_page/Octocat.png', source='proxy', width=200, height=166) }}" width="200" height="166"/>
 
 <!-- Absolute path with a web folder source -->
-<img src="{{ imgix('images/modules/logos_page/Octocat.png', width=200, height=166) }}" width="200" height="166"/>
+<img src="{{ imgix('images/modules/logos_page/Octocat.png', w=200, h=166) }}" width="200" />
 ```
 
 You should put the `enabled` and `domains[]` setting in your parameters to be able to enable imgix for different environments.
