@@ -70,8 +70,13 @@ class UrlBuilderExtension extends \Twig_Extension
      * @param null|string $auto
      * @return string
      */
-    public function getImgixUrl(string $path, ?string $source = null, ?int $w = 2048, ?int $h = 2048, ?string $fit = 'max', ?int $q = null, ?int $dpr = 1, ?string $auto = 'compress,format')
+    public function getImgixUrl(?string $path = null, ?string $source = null, ?int $w = 2048, ?int $h = 2048, ?string $fit = 'max', ?int $q = null, ?int $dpr = 1, ?string $auto = 'compress,format')
     {
+        // Die silently if the path is null
+        if (null === $path ) {
+            return false;
+        }
+
         // If imgix is disabled or we already provided an absolute URI
         if (!$this->enabled || preg_match('/^https?:\/\//', $path)) {
             return $path;
