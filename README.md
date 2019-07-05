@@ -29,7 +29,7 @@ $ php composer.phar require tacticmedia/imgix-bundle ~3.0
 For Symfony 4+ with PHP 7.1 run:
 
 ``` bash
-$ php composer.phar require tacticmedia/imgix-bundle ~3.1
+$ php composer.phar require tacticmedia/imgix-bundle ^4.0
 ```
 
 Then, enable the bundle:
@@ -51,13 +51,13 @@ Finally add your sources:
 ```yml
 tacticmedia_imgix:
     enabled: true
-    default_source: folder
+    default_source: 'folder'
     sources:
         folder:
-            domains:  [ acme.imgix.net ]
+            domain: 'acme.imgix.net'
         proxy:
-            domains:  [ acme-proxy.imgix.net ]
-            sign_key: abcd1234
+            domain: 'acme-proxy.imgix.net'
+            sign_key: 'abcd1234'
 ```
 
 Usage

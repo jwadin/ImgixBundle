@@ -39,14 +39,11 @@ class TacticmediaImgixExtension extends Extension
         $class = $container->getParameter('tacticmedia_imgix.url_builder.class');
 
         foreach ($config['sources'] as $name => $source) {
-            $domains = $source['domains'];
+            $domain = $source['domain'];
             $tls = true;
             $key = $source['sign_key'];
-            $strategy = 'cycle' === $source['shard_strategy']
-                ? ShardStrategy::CYCLE
-                : ShardStrategy::CRC;
 
-            $definition = new Definition($class, [$domains, $tls, $key, $strategy]);
+            $definition = new Definition($class, [$domain, $tls, $key]);
 
             $id = sprintf('tacticmedia_imgix.url_builder_%s', $name);
 
