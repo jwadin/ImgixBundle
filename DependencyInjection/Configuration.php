@@ -42,6 +42,8 @@ class Configuration implements ConfigurationInterface
                 ->children()
                     ->arrayNode('domains')
                         ->isRequired()
+                        ->requiresAtLeastOneElement()
+                        ->prototype('scalar')
                         ->end()
                     ->scalarNode('sign_key')
                         ->defaultValue('')
