@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "symfony/framework-bundle": "^4.0",
+        "symfony/framework-bundle": "^5.0",
         "imgix/imgix-php": "^3.0"
     },
     "autoload": {
