@@ -1,5 +1,5 @@
 {
-    "name": "tacticmedia/imgix-bundle",
+    "name": "jwadin/imgix-bundle",
     "version": "4.0.0",
     "description": "Integration of the imgix library into Symfony 4+ & PHP 7.1+",
     "keywords": ["imgix"],
