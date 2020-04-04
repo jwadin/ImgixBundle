@@ -45,6 +45,7 @@ class Configuration implements ConfigurationInterface
                         ->requiresAtLeastOneElement()
                         ->prototype('scalar')
                         ->end()
+                    ->end()
                     ->scalarNode('sign_key')
                         ->defaultValue('')
                     ->end()
