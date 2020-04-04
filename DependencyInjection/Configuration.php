@@ -32,8 +32,8 @@ class Configuration implements ConfigurationInterface
 
     private function getSourcesNode()
     {
-        $treeBuilder = new TreeBuilder();
-        $node = $treeBuilder->root('sources');
+        $treeBuilder = new TreeBuilder('sources');
+        $node = $treeBuilder->getRootNode();
 
         $node
             ->requiresAtLeastOneElement()
