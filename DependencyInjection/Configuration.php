@@ -40,7 +40,7 @@ class Configuration implements ConfigurationInterface
             ->useAttributeAsKey('name')
             ->prototype('array')
                 ->children()
-                    ->scalarNode('domain')
+                    ->arrayNode('domains')
                         ->isRequired()
                         ->end()
                     ->scalarNode('sign_key')
